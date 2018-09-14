@@ -1,0 +1,45 @@
+<resources>
+
+    <!-- Common -->
+    <string name="app_name">box</string>
+    <string name="not_yet_implemented_info">Not yet implemented</string>
+    <string name="button_cancel">Cancel</string>
+
+
+    <!-- Main activity -->
+    <string name="main_nav_header_title">Box app</string>
+    <string name="main_nav_drawer_open_desc">Open navigation drawer</string>
+    <string name="main_nav_drawer_close_desc">Close navigation drawer</string>
+
+
+    <!-- Biometric Prompt Fragment -->
+    <string name="biometric_nav_item_title">Biometric</string>
+    <string name="biometric_screen_title">@string/biometric_nav_item_title</string>
+    <string name="biometric_transaction_info">You have very important transaction that needs to be confirmed with fingerprint</string>
+    <string name="biometric_new_biometric_prompt">Use new biometric prompt</string>
+    <string name="biometric_old_fingerprint_dialog">Use old fashioned fingerprint dialog</string>
+    <string name="biometric_transaction_confirmed">Transaction confirmed</string>
+    <string name="biometric_new_transaction_button">New transaction</string>
+    <string name="biometric_add_fingerprint_info">In order to confirm transaction with fingerprint you need to add your fingerprint in settings</string>
+    <string name="biometric_add_fingerprint_button">Add fingerprint</string>
+    <string name="biometric_fingerprint_not_supported_info">Fingerprint is not supported on this device</string>
+    <string name="biometric_error_msg">Error occurred</string>
+    <string name="biometric_not_supported_msg">Biometric prompt is not supported on this device</string>
+    <string name="biometric_transaction_title">Box app auth</string>
+    <string name="biometric_transaction_subtitle">Important transaction</string>
+    <string name="biometric_transaction_description">Transaction description</string>
+
+
+    <!-- Old Fingerprint dialog -->
+    <string name="fingerprint_description">Confirm fingerprint to continue</string>
+    <string name="description_fingerprint_icon">Fingerprint icon</string>
+    <string name="fingerprint_hint">Touch sensor</string>
+    <string name="fingerprint_not_recognized">Fingerprint not recognized. Try again</string>
+    <string name="fingerprint_success">Fingerprint recognized</string>
+
+
+    <!-- Confirmation Prompt Fragment -->
+    <string name="confirmation_prompt_nav_item_title">Confirmation Prompt</string>
+    <string name="confirmation_prompt_screen_title">@string/confirmation_prompt_nav_item_title</string>
+
+</resources>

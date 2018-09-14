@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/fingerprintNotSupportedLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textAlignment="center"
+            android:text="@string/biometric_fingerprint_not_supported_info"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fingerprintNotSetUpLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textAlignment="center"
+            android:text="@string/biometric_add_fingerprint_info"/>
+
+        <Button
+            android:id="@+id/addFingerprintButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/biometric_add_fingerprint_button"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/transactionPendingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textAlignment="center"
+            android:text="@string/biometric_transaction_info"/>
+
+        <Button
+            android:id="@+id/useOldFingerprintDialogButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/biometric_old_fingerprint_dialog"/>
+
+        <Button
+            android:id="@+id/useNewBiometricPromptButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/biometric_new_biometric_prompt"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/transactionConfirmedLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textAlignment="center"
+            android:text="@string/biometric_transaction_confirmed"/>
+
+        <Button
+            android:id="@+id/newTransactionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/biometric_new_transaction_button"/>
+    </LinearLayout>
+</FrameLayout>
