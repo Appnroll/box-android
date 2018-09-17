@@ -7,6 +7,10 @@
             android:title="@string/biometric_nav_item_title"/>
 
         <item
+            android:id="@+id/navItemImageDecoder"
+            android:title="@string/image_decoder_nav_item_title"/>
+
+        <item
             android:id="@+id/navItemConfirmationPrompt"
             android:title="@string/confirmation_prompt_nav_item_title"/>
     </group>

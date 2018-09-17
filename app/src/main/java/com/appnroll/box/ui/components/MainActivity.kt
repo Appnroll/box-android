@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity
 import com.appnroll.box.R
 import com.appnroll.box.ui.components.biometric.BiometricFragment
 import com.appnroll.box.ui.components.confirmationprompt.ConfirmationPromptFragment
+import com.appnroll.box.ui.components.imagedecoder.ImageDecoderFragment
 import com.appnroll.box.ui.custom.NavItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main_content.*
@@ -19,12 +20,14 @@ class MainActivity : AppCompatActivity() {
 
     private val navItems = listOf(
             NavItem(R.id.navItemBiometric, "BIOMETRIC_FRAGMENT_TAG", R.string.biometric_screen_title),
+            NavItem(R.id.navItemImageDecoder, "IMAGE_DECODER_FRAGMENT_TAG", R.string.image_decoder_screen_title),
             NavItem(R.id.navItemConfirmationPrompt, "CONFIRMATION_PROMPT_FRAGMENT_TAG", R.string.confirmation_prompt_screen_title)
     )
 
     private fun NavItem.getNewFragment()
             = when(this.navItemId) {
         R.id.navItemBiometric -> BiometricFragment.getInstance()
+        R.id.navItemImageDecoder -> ImageDecoderFragment.getInstance()
         R.id.navItemConfirmationPrompt -> ConfirmationPromptFragment.getInstance()
         else -> throw IllegalStateException("Missing create fragment function for tag ${this.fragmentTag}")
     }

@@ -42,4 +42,15 @@
     <string name="confirmation_prompt_nav_item_title">Confirmation Prompt</string>
     <string name="confirmation_prompt_screen_title">@string/confirmation_prompt_nav_item_title</string>
 
+
+    <!-- Image decoder -->
+    <string name="image_decoder_nav_item_title">Image decoder</string>
+    <string name="image_decoder_screen_title">@string/image_decoder_nav_item_title</string>
+    <string name="image_decoder_cat_jpg_button">Cat JPG</string>
+    <string name="image_decoder_cat_webp_button">Cat WEBP</string>
+    <string name="image_decoder_cat_gif_button">Cat GIF</string>
+    <string name="image_decoder_original_button">Original</string>
+    <string name="image_decoder_resized_button">Resized</string>
+    <string name="image_decoder_cropped_button">Cropped</string>
+    <string name="image_decoder_post_processed_button">Round corners</string>
 </resources>
