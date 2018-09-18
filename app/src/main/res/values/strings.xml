@@ -38,11 +38,6 @@
     <string name="fingerprint_success">Fingerprint recognized</string>
 
 
-    <!-- Confirmation Prompt Fragment -->
-    <string name="confirmation_prompt_nav_item_title">Confirmation Prompt</string>
-    <string name="confirmation_prompt_screen_title">@string/confirmation_prompt_nav_item_title</string>
-
-
     <!-- Image decoder -->
     <string name="image_decoder_nav_item_title">Image decoder</string>
     <string name="image_decoder_screen_title">@string/image_decoder_nav_item_title</string>
@@ -53,4 +48,17 @@
     <string name="image_decoder_resized_button">Resized</string>
     <string name="image_decoder_cropped_button">Cropped</string>
     <string name="image_decoder_post_processed_button">Round corners</string>
+
+
+    <!-- Precomputed text -->
+    <string name="precomputed_text_nav_item_title">Precomputed text</string>
+    <string name="precomputed_text_screen_title">@string/precomputed_text_nav_item_title</string>
+    <string name="precomputed_text_clear_text_button">Clear text</string>
+    <string name="precomputed_text_show_text_button">Display long text</string>
+    <string name="precomputed_text_show_precomputed_text_button">Display long precomputed text</string>
+
+
+    <!-- Confirmation Prompt Fragment -->
+    <string name="confirmation_prompt_nav_item_title">Confirmation Prompt</string>
+    <string name="confirmation_prompt_screen_title">@string/confirmation_prompt_nav_item_title</string>
 </resources>
