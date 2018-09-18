@@ -58,4 +58,13 @@
     <string name="precomputed_text_show_precomputed_text_button">Display long precomputed text</string>
 
 
+    <!-- Magnifier -->
+    <string name="magnifier_nav_item_title">Magnifier</string>
+    <string name="magnifier_screen_title">@string/magnifier_nav_item_title</string>
+    <string name="magnifier_display_magnifier_check_box">Display magnifier on touch</string>
+    <string name="magnifier_text_to_magnify">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec accumsan lectus. Nunc vitae erat quam.
+        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        Donec malesuada erat in consectetur dignissim. Etiam dictum urna nisl, sit amet interdum ipsum vehicula congue.
+    </string>
 </resources>
