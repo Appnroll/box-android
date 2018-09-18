@@ -58,7 +58,4 @@
     <string name="precomputed_text_show_precomputed_text_button">Display long precomputed text</string>
 
 
-    <!-- Confirmation Prompt Fragment -->
-    <string name="confirmation_prompt_nav_item_title">Confirmation Prompt</string>
-    <string name="confirmation_prompt_screen_title">@string/confirmation_prompt_nav_item_title</string>
 </resources>
