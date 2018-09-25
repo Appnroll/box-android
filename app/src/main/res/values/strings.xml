@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <!-- Common -->
@@ -25,9 +26,9 @@
     <string name="biometric_fingerprint_not_supported_info">Fingerprint is not supported on this device</string>
     <string name="biometric_error_msg">Error occurred</string>
     <string name="biometric_not_supported_msg">Biometric prompt is not supported on this device</string>
-    <string name="biometric_transaction_title">Box app auth</string>
-    <string name="biometric_transaction_subtitle">Important transaction</string>
-    <string name="biometric_transaction_description">Transaction description</string>
+    <string name="biometric_transaction_title">Title</string>
+    <string name="biometric_transaction_subtitle">Subtitle</string>
+    <string name="biometric_transaction_description">Description</string>
 
 
     <!-- Old Fingerprint dialog -->
@@ -41,9 +42,12 @@
     <!-- Image decoder -->
     <string name="image_decoder_nav_item_title">Image decoder</string>
     <string name="image_decoder_screen_title">@string/image_decoder_nav_item_title</string>
+    <string name="image_decoder_cat_jpg_checkbox">Use old BitmapFactory</string>
     <string name="image_decoder_cat_jpg_button">Cat JPG</string>
     <string name="image_decoder_cat_webp_button">Cat WEBP</string>
     <string name="image_decoder_cat_gif_button">Cat GIF</string>
+    <string name="image_decoder_drawable_button">Drawable</string>
+    <string name="image_decoder_vector_drawable_button">Vector Drawable</string>
     <string name="image_decoder_original_button">Original</string>
     <string name="image_decoder_resized_button">Resized</string>
     <string name="image_decoder_cropped_button">Cropped</string>
