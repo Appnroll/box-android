@@ -15,6 +15,10 @@
             android:title="@string/precomputed_text_nav_item_title"/>
 
         <item
+            android:id="@+id/navItemPrecomputedTextRecycler"
+            android:title="@string/precomputed_text_recycler_nav_item_title"/>
+
+        <item
             android:id="@+id/navItemMagnifier"
             android:title="@string/magnifier_nav_item_title"/>
     </group>

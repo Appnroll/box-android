@@ -10,6 +10,7 @@ import com.appnroll.box.ui.components.biometric.BiometricFragment
 import com.appnroll.box.ui.components.imagedecoder.ImageDecoderFragment
 import com.appnroll.box.ui.components.magnifier.MagnifierFragment
 import com.appnroll.box.ui.components.precomputedtext.PrecomputedTextFragment
+import com.appnroll.box.ui.components.precomputedtext.PrecomputedTextRecyclerFragment
 import com.appnroll.box.ui.custom.NavItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main_content.*
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
             NavItem(R.id.navItemBiometric, "BIOMETRIC_FRAGMENT_TAG", R.string.biometric_screen_title),
             NavItem(R.id.navItemImageDecoder, "IMAGE_DECODER_FRAGMENT_TAG", R.string.image_decoder_screen_title),
             NavItem(R.id.navItemPrecomputedText, "PRECOMPUTED_TEXT_FRAGMENT_TAG", R.string.precomputed_text_screen_title),
+            NavItem(R.id.navItemPrecomputedTextRecycler, "PRECOMPUTED_TEXT_RECYCLER_FRAGMENT_TAG", R.string.precomputed_text_recycler_screen_title),
             NavItem(R.id.navItemMagnifier, "MAGNIFIER_FRAGMENT_TAG", R.string.magnifier_screen_title)
     )
 
@@ -31,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         R.id.navItemBiometric -> BiometricFragment.getInstance()
         R.id.navItemImageDecoder -> ImageDecoderFragment.getInstance()
         R.id.navItemPrecomputedText -> PrecomputedTextFragment.getInstance()
+        R.id.navItemPrecomputedTextRecycler -> PrecomputedTextRecyclerFragment.getInstance()
         R.id.navItemMagnifier -> MagnifierFragment.getInstance()
         else -> throw IllegalStateException("Missing create fragment function for tag ${this.fragmentTag}")
     }
