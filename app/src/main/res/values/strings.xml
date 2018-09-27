@@ -59,8 +59,8 @@
     <string name="precomputed_text_nav_item_title">Precomputed text</string>
     <string name="precomputed_text_screen_title">@string/precomputed_text_nav_item_title</string>
     <string name="precomputed_text_clear_text_button">Clear</string>
-    <string name="precomputed_text_show_text_button">Text</string>
-    <string name="precomputed_text_show_precomputed_text_button">Precomputed text</string>
+    <string name="precomputed_text_show_text_button">Show Text</string>
+    <string name="precomputed_text_show_precomputed_text_button">Show Precomputed text</string>
 
 
     <!-- Precomputed text recycler -->

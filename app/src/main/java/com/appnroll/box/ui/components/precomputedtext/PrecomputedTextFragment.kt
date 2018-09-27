@@ -31,9 +31,11 @@ class PrecomputedTextFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         longText.movementMethod = ScrollingMovementMethod()
+        longPrecomputedText.movementMethod = ScrollingMovementMethod()
 
         clearTextButton.setOnClickListener {
             longText.text = ""
+            longPrecomputedText.text = ""
         }
 
         showTextButton.setOnClickListener {
@@ -49,7 +51,7 @@ class PrecomputedTextFragment : Fragment() {
 
     @RequiresApi(Build.VERSION_CODES.P)
     private fun preComputeLongText() {
-        val params = longText.textMetricsParams
+        val params = longPrecomputedText.textMetricsParams
         showPrecomputedTextButton.isEnabled = false
         val ref = WeakReference(showPrecomputedTextButton)
         GlobalScope.launch(Dispatchers.Default) {
@@ -58,7 +60,7 @@ class PrecomputedTextFragment : Fragment() {
                 ref.get()?.let { button ->
                     button.isEnabled = true
                     button.setOnClickListener {
-                        longText.text = precomputedText
+                        longPrecomputedText.text = precomputedText
                     }
                 }
             }
@@ -66,7 +68,7 @@ class PrecomputedTextFragment : Fragment() {
     }
 
     private fun preComputeLongTextCompat() {
-        val params = TextViewCompat.getTextMetricsParams(longText)
+        val params = TextViewCompat.getTextMetricsParams(longPrecomputedText)
         showPrecomputedTextButton.isEnabled = false
         val ref = WeakReference(showPrecomputedTextButton)
         GlobalScope.launch(Dispatchers.Default) {
@@ -75,7 +77,7 @@ class PrecomputedTextFragment : Fragment() {
                 ref.get()?.let { button ->
                     button.isEnabled = true
                     button.setOnClickListener {
-                        longText.text = precomputedText
+                        longPrecomputedText.text = precomputedText
                     }
                 }
             }
