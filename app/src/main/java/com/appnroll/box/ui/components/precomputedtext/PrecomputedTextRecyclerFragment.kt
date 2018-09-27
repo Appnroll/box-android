@@ -14,6 +14,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.appnroll.box.R
+import com.appnroll.box.utils.RandomStringGenerator
 import com.appnroll.box.utils.isAtLeastPie
 import kotlinx.android.synthetic.main.fragment_precomputed_text_recycler.*
 import kotlinx.android.synthetic.main.item_text.view.*
@@ -22,7 +23,6 @@ import kotlinx.coroutines.experimental.GlobalScope
 import kotlinx.coroutines.experimental.android.Main
 import kotlinx.coroutines.experimental.launch
 import java.lang.ref.WeakReference
-import java.util.*
 
 
 class PrecomputedTextRecyclerFragment : Fragment() {
@@ -71,7 +71,7 @@ class PrecomputedTextRecyclerFragment : Fragment() {
             val generator = RandomStringGenerator()
             val items = arrayOfNulls<String>(ITEMS_COUNT)
             items.forEachIndexed { i, _ ->
-                items[i] = "$i - ${generator.randomString(1500)}"
+                items[i] = "$i - ${generator.randomText(1500, 500)}"
             }
             return items.requireNoNulls()
         }
@@ -132,18 +132,6 @@ class PrecomputedTextRecyclerFragment : Fragment() {
                     }
                 }
             }
-        }
-    }
-
-    private class RandomStringGenerator {
-        private val source = "0123 4567 89AB CDEF GHIJ KLMN OPQR STUV WXYZ abcd efgh ijkl mnop qrst uvwx yz"
-        private var random = Random()
-
-        fun randomString(len: Int): String {
-            val sb = StringBuilder(len)
-            for (i in 0 until len - random.nextInt(500))
-                sb.append(source[random.nextInt(source.length)])
-            return sb.toString()
         }
     }
 }
