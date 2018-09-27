@@ -7,11 +7,6 @@
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/clearTextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/precomputed_text_clear_text_button"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,11 +15,24 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/showTextButton"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/precomputed_text_show_text_button"/>
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/showTextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/precomputed_text_show_text_button"/>
+
+            <Button
+                android:id="@+id/clearTextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/precomputed_text_clear_text_button"/>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/longText"
@@ -41,11 +49,24 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/showPrecomputedTextButton"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/precomputed_text_show_precomputed_text_button"/>
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/showPrecomputedTextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/precomputed_text_show_precomputed_text_button"/>
+
+            <Button
+                android:id="@+id/clearPrecomputedTextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/precomputed_text_clear_text_button"/>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/longPrecomputedText"

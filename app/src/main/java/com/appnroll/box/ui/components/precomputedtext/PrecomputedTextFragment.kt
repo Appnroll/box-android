@@ -40,6 +40,9 @@ class PrecomputedTextFragment : Fragment() {
 
         clearTextButton.setOnClickListener {
             longText.text = ""
+        }
+
+        clearPrecomputedTextButton.setOnClickListener {
             longPrecomputedText.text = ""
         }
 
@@ -47,6 +50,10 @@ class PrecomputedTextFragment : Fragment() {
             longText.text = randomText
         }
 
+        preComputeText()
+    }
+
+    private fun preComputeText() {
         if (isAtLeastPie()) {
             preComputeLongText()
         } else {
@@ -77,12 +84,12 @@ class PrecomputedTextFragment : Fragment() {
         showPrecomputedTextButton.isEnabled = false
         val ref = WeakReference(showPrecomputedTextButton)
         GlobalScope.launch(Dispatchers.Default) {
-            val precomputedText = PrecomputedTextCompat.create(randomTextToPreCompute, params)
+            val precomputedTextCompat = PrecomputedTextCompat.create(randomTextToPreCompute, params)
             GlobalScope.launch(Dispatchers.Main) {
                 ref.get()?.let { button ->
                     button.isEnabled = true
                     button.setOnClickListener {
-                        longPrecomputedText.text = precomputedText
+                        TextViewCompat.setPrecomputedText(longPrecomputedText, precomputedTextCompat)
                     }
                 }
             }
