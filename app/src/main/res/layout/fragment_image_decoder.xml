@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
     <CheckBox
         android:id="@+id/catJpgCheckbox"
         android:layout_width="match_parent"

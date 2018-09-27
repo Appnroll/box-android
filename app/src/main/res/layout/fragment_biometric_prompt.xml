@@ -61,13 +61,13 @@
             android:text="@string/biometric_transaction_info"/>
 
         <Button
-            android:id="@+id/useOldFingerprintDialogButton"
+            android:id="@+id/showFingerprintDialogButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/biometric_old_fingerprint_dialog"/>
 
         <Button
-            android:id="@+id/useNewBiometricPromptButton"
+            android:id="@+id/showBiometricPromptButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/biometric_new_biometric_prompt"/>

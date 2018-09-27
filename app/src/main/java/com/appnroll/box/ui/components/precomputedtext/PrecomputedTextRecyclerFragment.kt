@@ -1,8 +1,12 @@
 package com.appnroll.box.ui.components.precomputedtext
 
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
+import android.support.annotation.RequiresApi
 import android.support.v4.app.Fragment
+import android.support.v4.text.PrecomputedTextCompat
+import android.support.v4.widget.TextViewCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.text.PrecomputedText
@@ -10,6 +14,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.appnroll.box.R
+import com.appnroll.box.utils.isAtLeastPie
 import kotlinx.android.synthetic.main.fragment_precomputed_text_recycler.*
 import kotlinx.android.synthetic.main.item_text.view.*
 import kotlinx.coroutines.experimental.Dispatchers
@@ -24,7 +29,13 @@ class PrecomputedTextRecyclerFragment : Fragment() {
 
     private val items by lazy { generateItems() }
     private val regularTextAdapter by lazy { RegularTextAdapter(requireContext(), items) }
-    private val precomputedTextAdapter by lazy { PrecomputedTextAdapter(requireContext(), items) }
+    private val precomputedTextAdapter by lazy {
+        if (isAtLeastPie()) {
+            PrecomputedTextAdapter(requireContext(), items)
+        } else {
+            PrecomputedTextCompatAdapter(requireContext(), items)
+        }
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_precomputed_text_recycler, container, false)
@@ -37,10 +48,14 @@ class PrecomputedTextRecyclerFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = regularTextAdapter
 
-        usePrecomputedTextCheckBox.setOnCheckedChangeListener { _, isChecked ->
+        usePrecomputedTextButton.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 recyclerView.adapter = precomputedTextAdapter
-            } else {
+            }
+        }
+
+        useNotPrecomputedTextButton.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
                 recyclerView.adapter = regularTextAdapter
             }
         }
@@ -50,9 +65,7 @@ class PrecomputedTextRecyclerFragment : Fragment() {
 
         const val ITEMS_COUNT = 10
 
-        fun getInstance(): Fragment {
-            return PrecomputedTextRecyclerFragment()
-        }
+        fun getInstance() = PrecomputedTextRecyclerFragment()
 
         private fun generateItems(): Array<String> {
             val generator = RandomStringGenerator()
@@ -85,6 +98,7 @@ class PrecomputedTextRecyclerFragment : Fragment() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.P)
     private class PrecomputedTextAdapter(context: Context, items: Array<String>): TextAdapter(context, items) {
 
         override fun onBindViewHolder(viewHolder: TextViewHolder, position: Int) {
@@ -93,6 +107,24 @@ class PrecomputedTextRecyclerFragment : Fragment() {
                 val ref = WeakReference(itemView.textView)
                 GlobalScope.launch(Dispatchers.Default) {
                     val precomputedText = PrecomputedText.create(items[position], params)
+                    GlobalScope.launch(Dispatchers.Main) {
+                        ref.get()?.let {
+                            it.text = precomputedText
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private class PrecomputedTextCompatAdapter(context: Context, items: Array<String>): TextAdapter(context, items) {
+
+        override fun onBindViewHolder(viewHolder: TextViewHolder, position: Int) {
+            with(viewHolder) {
+                val params = TextViewCompat.getTextMetricsParams(itemView.textView)
+                val ref = WeakReference(itemView.textView)
+                GlobalScope.launch(Dispatchers.Default) {
+                    val precomputedText = PrecomputedTextCompat.create(items[position], params)
                     GlobalScope.launch(Dispatchers.Main) {
                         ref.get()?.let {
                             it.text = precomputedText

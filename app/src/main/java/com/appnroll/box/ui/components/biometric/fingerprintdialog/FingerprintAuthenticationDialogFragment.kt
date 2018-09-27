@@ -14,10 +14,12 @@
  * limitations under the License
  */
 
-package com.appnroll.box.ui.components.biometric.oldfingerprintdialog
+package com.appnroll.box.ui.components.biometric.fingerprintdialog
 
 import android.hardware.fingerprint.FingerprintManager
+import android.os.Build
 import android.os.Bundle
+import android.support.annotation.RequiresApi
 import android.support.v4.app.DialogFragment
 import android.view.LayoutInflater
 import android.view.View
@@ -29,6 +31,7 @@ import com.appnroll.box.R
  * A dialog which uses fingerprint APIs to authenticate the user
  * Based on: https://github.com/googlesamples/android-FingerprintDialog/blob/master/kotlinApp/app/src/main/java/com/example/android/fingerprintdialog/FingerprintAuthenticationDialogFragment.kt
  */
+@RequiresApi(Build.VERSION_CODES.M)
 class FingerprintAuthenticationDialogFragment : DialogFragment(), FingerprintUiHelper.Callback {
 
     private lateinit var cancelButton: Button

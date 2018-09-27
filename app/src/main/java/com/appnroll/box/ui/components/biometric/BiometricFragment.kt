@@ -5,19 +5,24 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.hardware.biometrics.BiometricPrompt
 import android.hardware.fingerprint.FingerprintManager
+import android.os.Build
 import android.os.Bundle
 import android.os.CancellationSignal
 import android.provider.Settings
+import android.support.annotation.RequiresApi
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.appnroll.box.R
-import com.appnroll.box.ui.components.biometric.oldfingerprintdialog.FingerprintAuthenticationDialogFragment
+import com.appnroll.box.ui.components.FeatureNonAvailableFragment
+import com.appnroll.box.ui.components.biometric.fingerprintdialog.FingerprintAuthenticationDialogFragment
+import com.appnroll.box.utils.isAtLeastMarshamallow
+import com.appnroll.box.utils.isAtLeastPie
 import kotlinx.android.synthetic.main.fragment_biometric_prompt.*
 
-
+@RequiresApi(Build.VERSION_CODES.M)
 class BiometricFragment : Fragment(), FingerprintAuthenticationDialogFragment.Callback {
 
     private val fingerprintManager by lazy { requireActivity().getSystemService(FingerprintManager::class.java) }
@@ -29,12 +34,16 @@ class BiometricFragment : Fragment(), FingerprintAuthenticationDialogFragment.Ca
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        useOldFingerprintDialogButton.setOnClickListener {
+        showFingerprintDialogButton.setOnClickListener {
             useOldFingerprintDialog()
         }
 
-        useNewBiometricPromptButton.setOnClickListener {
-            useNewBiometricPrompt()
+        showBiometricPromptButton.setOnClickListener {
+            if (isAtLeastPie()) {
+                showBiometricPrompt()
+            } else {
+                showBiometricPromptCompat()
+            }
         }
 
         addFingerprintButton.setOnClickListener {
@@ -79,7 +88,8 @@ class BiometricFragment : Fragment(), FingerprintAuthenticationDialogFragment.Ca
         fragment.show(fragmentManager, DIALOG_FRAGMENT_TAG)
     }
 
-    private fun useNewBiometricPrompt() {
+    @RequiresApi(Build.VERSION_CODES.P)
+    private fun showBiometricPrompt() {
         if (!requireActivity().packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)) {
             Toast.makeText(context, R.string.biometric_not_supported_msg, Toast.LENGTH_SHORT).show()
             return
@@ -101,11 +111,13 @@ class BiometricFragment : Fragment(), FingerprintAuthenticationDialogFragment.Ca
         })
     }
 
+    private fun showBiometricPromptCompat() {
+        // TODO: implement
+    }
+
     companion object {
 
-        fun getInstance(): Fragment {
-            return BiometricFragment()
-        }
+        fun getInstance() = if (isAtLeastMarshamallow()) BiometricFragment() else FeatureNonAvailableFragment.getInstance()
 
         const val DIALOG_FRAGMENT_TAG = "DIALOG_FRAGMENT_TAG"
     }

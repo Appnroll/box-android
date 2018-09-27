@@ -2,13 +2,17 @@ package com.appnroll.box.ui.components.imagedecoder
 
 import android.graphics.*
 import android.graphics.drawable.AnimatedImageDrawable
+import android.os.Build
 import android.os.Bundle
+import android.support.annotation.RequiresApi
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CompoundButton
 import com.appnroll.box.R
+import com.appnroll.box.ui.components.FeatureNonAvailableFragment
+import com.appnroll.box.utils.isAtLeastPie
 import kotlinx.android.synthetic.main.fragment_image_decoder.*
 import kotlinx.coroutines.experimental.Dispatchers
 import kotlinx.coroutines.experimental.GlobalScope
@@ -16,7 +20,7 @@ import kotlinx.coroutines.experimental.android.Main
 import kotlinx.coroutines.experimental.launch
 import java.io.IOException
 
-
+@RequiresApi(Build.VERSION_CODES.P)
 class ImageDecoderFragment : Fragment() {
 
     private val emptyListener = ImageDecoder.OnHeaderDecodedListener { decoder, _, _ ->
@@ -150,8 +154,6 @@ class ImageDecoderFragment : Fragment() {
         const val ASSET_FILE_CAT_GIF = "cat.gif"
         const val ASSET_FILE_CAT_WEBP = "cat.webp"
 
-        fun getInstance(): Fragment {
-            return ImageDecoderFragment()
-        }
+        fun getInstance() = if (isAtLeastPie()) ImageDecoderFragment() else FeatureNonAvailableFragment.getInstance()
     }
 }

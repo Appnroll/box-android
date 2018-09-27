@@ -12,6 +12,7 @@ import com.appnroll.box.ui.components.magnifier.MagnifierFragment
 import com.appnroll.box.ui.components.precomputedtext.PrecomputedTextFragment
 import com.appnroll.box.ui.components.precomputedtext.PrecomputedTextRecyclerFragment
 import com.appnroll.box.ui.custom.NavItem
+import com.appnroll.box.utils.isAtLeastPie
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main_content.*
 

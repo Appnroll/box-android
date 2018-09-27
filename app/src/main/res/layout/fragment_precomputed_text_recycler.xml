@@ -6,12 +6,25 @@
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
-    <CheckBox
-        android:id="@+id/usePrecomputedTextCheckBox"
+    <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="@string/precomputed_text_recycler_check_box"/>
+        android:layout_margin="8dp">
+
+        <RadioButton
+            android:id="@+id/useNotPrecomputedTextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/precomputed_text_recycler_use_not_precomputed_text_button"/>
+
+        <RadioButton
+            android:id="@+id/usePrecomputedTextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/precomputed_text_recycler_use_precomputed_text_button"/>
+
+    </RadioGroup>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"

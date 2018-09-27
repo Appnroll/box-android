@@ -14,10 +14,12 @@
  * limitations under the License
  */
 
-package com.appnroll.box.ui.components.biometric.oldfingerprintdialog
+package com.appnroll.box.ui.components.biometric.fingerprintdialog
 
 import android.hardware.fingerprint.FingerprintManager
+import android.os.Build
 import android.os.CancellationSignal
+import android.support.annotation.RequiresApi
 import android.widget.ImageView
 import android.widget.TextView
 import com.appnroll.box.R
@@ -26,6 +28,7 @@ import com.appnroll.box.R
  * Small helper class to manage text/icon around fingerprint authentication UI.
  * Based on: https://github.com/googlesamples/android-FingerprintDialog/blob/master/kotlinApp/app/src/main/java/com/example/android/fingerprintdialog/FingerprintUiHelper.kt
  */
+@RequiresApi(Build.VERSION_CODES.M)
 class FingerprintUiHelper
 
 /**
