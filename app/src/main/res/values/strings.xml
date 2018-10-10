@@ -43,7 +43,7 @@
     <!-- Image decoder -->
     <string name="image_decoder_nav_item_title">Image decoder</string>
     <string name="image_decoder_screen_title">@string/image_decoder_nav_item_title</string>
-    <string name="image_decoder_cat_jpg_checkbox">Use old BitmapFactory</string>
+    <string name="image_decoder_use_bitmap_factory_checkbox">Use BitmapFactory instead ImageDecoder</string>
     <string name="image_decoder_cat_jpg_button">Cat JPG</string>
     <string name="image_decoder_cat_webp_button">Cat WEBP</string>
     <string name="image_decoder_cat_gif_button">Cat GIF</string>

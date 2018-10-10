@@ -48,7 +48,7 @@ class ImageDecoderFragment : Fragment() {
         croppedButton.setOnCheckedChangeListener(onCheckedChangeListener)
         postProcessedButton.setOnCheckedChangeListener(onCheckedChangeListener)
 
-        catJpgCheckbox.setOnCheckedChangeListener { _, isChecked ->
+        useBitmapFactoryCheckbox.setOnCheckedChangeListener { _, isChecked ->
             originalButton.isEnabled = !isChecked
             resizedButton.isEnabled = !isChecked
             croppedButton.isEnabled = !isChecked
@@ -77,7 +77,7 @@ class ImageDecoderFragment : Fragment() {
     }
 
     private fun updateImage(assetFileName: String, decodedListener: ImageDecoder.OnHeaderDecodedListener) {
-        if (catJpgCheckbox.isChecked) {
+        if (useBitmapFactoryCheckbox.isChecked) {
             updateImageWithBitmapFactory(assetFileName)
         } else {
             updateImageWithImageDecoder(assetFileName, decodedListener)
