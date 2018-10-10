@@ -43,6 +43,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/image_decoder_cat_gif_button"/>
+
+            <RadioButton
+                android:id="@+id/catMalformedJpgButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/image_decoder_cat_malformed_jpg_button"/>
+
         </RadioGroup>
 
         <RadioGroup

@@ -47,6 +47,7 @@
     <string name="image_decoder_cat_jpg_button">Cat JPG</string>
     <string name="image_decoder_cat_webp_button">Cat WEBP</string>
     <string name="image_decoder_cat_gif_button">Cat GIF</string>
+    <string name="image_decoder_cat_malformed_jpg_button">Cat JPG - malformed</string>
     <string name="image_decoder_drawable_button">Drawable</string>
     <string name="image_decoder_vector_drawable_button">Vector Drawable</string>
     <string name="image_decoder_original_button">Original</string>

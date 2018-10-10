@@ -41,6 +41,8 @@ class ImageDecoderFragment : Fragment() {
         catWebpButton.setOnCheckedChangeListener(onCheckedChangeListener)
         catGifButton.setOnCheckedChangeListener(onCheckedChangeListener)
 
+        catMalformedJpgButton.setOnCheckedChangeListener(onCheckedChangeListener)
+
         originalButton.setOnCheckedChangeListener(onCheckedChangeListener)
         resizedButton.setOnCheckedChangeListener(onCheckedChangeListener)
         croppedButton.setOnCheckedChangeListener(onCheckedChangeListener)
@@ -64,6 +66,7 @@ class ImageDecoderFragment : Fragment() {
                 catJpgButton -> assetFileName = ASSET_FILE_CAT_JPG
                 catWebpButton -> assetFileName = ASSET_FILE_CAT_WEBP
                 catGifButton -> assetFileName = ASSET_FILE_CAT_GIF
+                catMalformedJpgButton -> assetFileName = ASSET_FILE_CAT_MALFORMED_JPG
                 originalButton -> decodedListener = emptyListener
                 resizedButton -> decodedListener = resizeListener
                 croppedButton -> decodedListener = cropListener
@@ -151,8 +154,9 @@ class ImageDecoderFragment : Fragment() {
     companion object {
 
         const val ASSET_FILE_CAT_JPG = "cat.jpg"
-        const val ASSET_FILE_CAT_GIF = "cat.gif"
         const val ASSET_FILE_CAT_WEBP = "cat.webp"
+        const val ASSET_FILE_CAT_GIF = "cat.gif"
+        const val ASSET_FILE_CAT_MALFORMED_JPG = "cat_malformed.jpg"
 
         fun getInstance() = if (isAtLeastPie()) ImageDecoderFragment() else FeatureNonAvailableFragment.getInstance()
     }
