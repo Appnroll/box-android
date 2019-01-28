@@ -10,4 +10,4 @@ App presenting new Android P features:
 Checout also more detailed description on my [Medium](https://medium.com/me/stories/public):
 - [Part 1: BiometricPrompt](https://medium.com/appnroll-publication/what-is-new-in-android-p-biometricprompt-d4fc85e55608)
 - [Part 2: ImageDecoder & AnimatedImageDrawable](https://medium.com/appnroll-publication/what-is-new-in-android-p-imagedecoder-animatedimagedrawable-a65744bec7c1)
-- Part 3: PrecomputedText
+- [Part 3: PrecomputedText](https://medium.com/appnroll-publication/what-is-new-in-android-p-precomputedtext-2a62ec9e8613)
